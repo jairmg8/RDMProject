@@ -2,7 +2,7 @@ package com.example.RDMProject.model;
 
 import java.util.Date;
 
-public class compras {
+public class Compras {
     private int idCompra;
     private int idUsuario;
     private int idProveedor;
@@ -17,7 +17,7 @@ public class compras {
     private double igv;
     private double total;
 
-    public compras(int idCompra, int idUsuario, int idProveedor, int idTipoComprobante, String serieComprobante, int nroComprobante, Date fecha_compra, Date fecha_emision, String observaciones, double subtotal, double descuento, double igv, double total) {
+    public Compras(int idCompra, int idUsuario, int idProveedor, int idTipoComprobante, String serieComprobante, int nroComprobante, Date fecha_compra, Date fecha_emision, String observaciones, double subtotal, double descuento, double igv, double total) {
         this.idCompra = idCompra;
         this.idUsuario = idUsuario;
         this.idProveedor = idProveedor;

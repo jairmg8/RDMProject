@@ -1,6 +1,6 @@
 package com.example.RDMProject.model;
 
-public class usuario {
+public class Usuario {
     private int idusuario;
     private String usuario;
     private String contrasenia;
@@ -9,7 +9,7 @@ public class usuario {
     private int rol;
 
     //Añadir el contructor y el getter and setter
-    public usuario(int idusuario, String usuario, String contrasenia, String nombreCompleto, String email, int rol, int estado) {
+    public Usuario(int idusuario, String usuario, String contrasenia, String nombreCompleto, String email, int rol, int estado) {
         this.idusuario = idusuario;
         this.usuario = usuario;
         this.contrasenia = contrasenia;

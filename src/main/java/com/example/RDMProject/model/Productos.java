@@ -2,7 +2,7 @@ package com.example.RDMProject.model;
 
 import java.awt.*;
 
-public class productos {
+public class Productos {
     private int idProducto;
     private String nombre;
     private int codigo;
@@ -20,7 +20,7 @@ public class productos {
     private String codigoSunat;
     private int estado;
 
-    public productos(int idProducto, String nombre, int codigo, double precioVenta, double igv, String idUnidadMedida, int idCategoria, Image imagen, double precioInicialCompra, double pesoBruto, String alias, int stockMin, int stockIni, double descuento, String codigoSunat, int estado) {
+    public Productos(int idProducto, String nombre, int codigo, double precioVenta, double igv, String idUnidadMedida, int idCategoria, Image imagen, double precioInicialCompra, double pesoBruto, String alias, int stockMin, int stockIni, double descuento, String codigoSunat, int estado) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.codigo = codigo;

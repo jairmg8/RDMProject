@@ -1,6 +1,6 @@
 package com.example.RDMProject.model;
 
-public class detalleCompras {
+public class DetalleCompras {
     private int idDetalle;
     private int idCompra;
     private int idProducto;
@@ -9,7 +9,7 @@ public class detalleCompras {
     private double descuentoUnitario;
     private double subtotal;
 
-    public detalleCompras(int idDetalle, int idCompra, int idProducto, int cantidad, double precioUnitario, double descuentoUnitario, double subtotal) {
+    public DetalleCompras(int idDetalle, int idCompra, int idProducto, int cantidad, double precioUnitario, double descuentoUnitario, double subtotal) {
         this.idDetalle = idDetalle;
         this.idCompra = idCompra;
         this.idProducto = idProducto;

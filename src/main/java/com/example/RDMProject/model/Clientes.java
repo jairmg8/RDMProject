@@ -1,6 +1,6 @@
 package com.example.RDMProject.model;
 
-public class clientes {
+public class Clientes {
     private int idCliente;
     private int tipoDocumento;
     private int nroDocumento;
@@ -14,7 +14,7 @@ public class clientes {
     private String datosAdicionales;
     private int estado;
 
-    public clientes(int idCliente, int tipoDocumento, int nroDocumento, String nombreCliente, String direccion, int tipoClienteProvedoor, String alias, String genero, int numerocelular, String email, String datosAdicionales, int estado) {
+    public Clientes(int idCliente, int tipoDocumento, int nroDocumento, String nombreCliente, String direccion, int tipoClienteProvedoor, String alias, String genero, int numerocelular, String email, String datosAdicionales, int estado) {
         this.idCliente = idCliente;
         this.tipoDocumento = tipoDocumento;
         this.nroDocumento = nroDocumento;
