@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@RequestMapping("ClienteProveedor")
+@RequestMapping("/ClienteProveedor")
 @RestController
 public class ClienteProveedorController {
     private List<Clientes> clientes = new ArrayList<>();
