@@ -3,20 +3,20 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "venta")
-public class Venta {
+@Table(name = "compra")
+public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_venta")
-    private Integer idVenta;
+    @Column(name = "id_compra")
+    private Integer idCompra;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
+    @JoinColumn(name = "id_proveedor")
+    private Cliente proveedor;
 
     @Column(name = "id_tipo_comprobante")
     private Integer idTipoComprobante;
@@ -48,12 +48,12 @@ public class Venta {
     @Column(name = "total")
     private Double total;
 
-    public Integer getIdVenta() {
-        return idVenta;
+    public Integer getIdCompra() {
+        return idCompra;
     }
 
-    public void setIdVenta(Integer idVenta) {
-        this.idVenta = idVenta;
+    public void setIdCompra(Integer idCompra) {
+        this.idCompra = idCompra;
     }
 
     public Usuario getUsuario() {
@@ -64,12 +64,12 @@ public class Venta {
         this.usuario = usuario;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Cliente getProveedor() {
+        return proveedor;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setProveedor(Cliente proveedor) {
+        this.proveedor = proveedor;
     }
 
     public Integer getIdTipoComprobante() {

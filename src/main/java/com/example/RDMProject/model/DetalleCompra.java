@@ -1,18 +1,17 @@
 package com.example.RDMProject.model;
-
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "detalle_venta")
-public class DetalleVenta {
+@Table(name = "detalle_compra")
+public class DetalleCompra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_detalle_venta")
-    private Integer idDetalleVenta;
+    @Column(name = "id_detalle")
+    private Integer idDetalle;
 
     @ManyToOne
-    @JoinColumn(name = "id_venta")
-    private Venta venta;
+    @JoinColumn(name = "id_compra")
+    private Compra compra;
 
     @ManyToOne
     @JoinColumn(name = "id_producto")
@@ -30,20 +29,20 @@ public class DetalleVenta {
     @Column(name = "subtotal")
     private Double subtotal;
 
-    public Integer getIdDetalleVenta() {
-        return idDetalleVenta;
+    public Integer getIdDetalle() {
+        return idDetalle;
     }
 
-    public void setIdDetalleVenta(Integer idDetalleVenta) {
-        this.idDetalleVenta = idDetalleVenta;
+    public void setIdDetalle(Integer idDetalle) {
+        this.idDetalle = idDetalle;
     }
 
-    public Venta getVenta() {
-        return venta;
+    public Compra getCompra() {
+        return compra;
     }
 
-    public void setVenta(Venta venta) {
-        this.venta = venta;
+    public void setCompra(Compra compra) {
+        this.compra = compra;
     }
 
     public Producto getProducto() {

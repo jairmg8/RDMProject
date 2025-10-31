@@ -1,21 +1,25 @@
 package com.example.RDMProject.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "serie_factura")
 public class SerieFactura {
-    private int idFactura;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_factura")
+    private Integer idFactura;
+
+    @Column(name = "serie")
     private String serie;
-    private int estado;
 
-    public SerieFactura(int idFactura, String serie, int estado) {
-        this.idFactura = idFactura;
-        this.serie = serie;
-        this.estado = estado;
-    }
+    @Column(name = "estado")
+    private Integer estado;
 
-    public int getIdFactura() {
+    public Integer getIdFactura() {
         return idFactura;
     }
 
-    public void setIdFactura(int idFactura) {
+    public void setIdFactura(Integer idFactura) {
         this.idFactura = idFactura;
     }
 
@@ -27,11 +31,11 @@ public class SerieFactura {
         this.serie = serie;
     }
 
-    public int getEstado() {
+    public Integer getEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(Integer estado) {
         this.estado = estado;
     }
 }

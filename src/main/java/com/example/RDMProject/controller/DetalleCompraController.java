@@ -1,4 +1,4 @@
 package com.example.RDMProject.controller;
 
-public class UsuarioController {
+public class DetalleCompraController {
 }
