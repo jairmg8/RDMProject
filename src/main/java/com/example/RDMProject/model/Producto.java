@@ -182,4 +182,7 @@ public class Producto {
     public void setEstado(Integer estado) {
         this.estado = estado;
     }
+
+    public void setId(Long id) {
+    }
 }

@@ -1,46 +1,53 @@
 package com.example.RDMProject.controller;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+
 import com.example.RDMProject.model.Producto;
-import com.example.RDMProject.repository.ProductoRepository;
+import com.example.RDMProject.service.ProductoService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import java.util.Optional;
+
 @RestController
-@RequestMapping("/api/productos")
+@RequestMapping("/productos")
+@CrossOrigin(origins = "*")
 public class ProductoController {
 
-    @Autowired
-    private ProductoRepository productoRepository;
+    private final ProductoService productoService;
+
+    public ProductoController(ProductoService productoService) {
+        this.productoService = productoService;
+    }
 
     @GetMapping
-    public List<Producto> getAll() {
-        return productoRepository.findAll();
+    public List<Producto> listar() {
+        return productoService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Producto> getById(@PathVariable Integer id) {
-        return productoRepository.findById(id);
+    public ResponseEntity<Producto> obtenerPorId(@PathVariable Long id) {
+        return productoService.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Producto create(@RequestBody Producto producto) {
-        return productoRepository.save(producto);
+    public Producto crear(@RequestBody Producto producto) {
+        return productoService.save(producto);
     }
 
-    @PatchMapping("/{id}")
-    public Producto update(@PathVariable Integer id, @RequestBody Producto data) {
-        return productoRepository.findById(id)
+    @PutMapping("/{id}")
+    public ResponseEntity<Producto> actualizar(@PathVariable Long id, @RequestBody Producto producto) {
+        return productoService.findById(id)
                 .map(p -> {
-                    if (data.getNombre() != null) p.setNombre(data.getNombre());
-                    if (data.getPrecioVenta() != 0) p.setPrecioVenta(data.getPrecioVenta());
-                    if (data.getStockIni() != 0) p.setStockIni(data.getStockIni());
-                    return productoRepository.save(p);
+                    producto.setId(id);
+                    return ResponseEntity.ok(productoService.save(producto));
                 })
-                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
-        productoRepository.deleteById(id);
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        productoService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
