@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 @RestController
 @RequestMapping("/api/series-factura")
-public class SerieController {
+public class SerieRestController {
     @Autowired
     private SerieFacturaRepository repo;
 

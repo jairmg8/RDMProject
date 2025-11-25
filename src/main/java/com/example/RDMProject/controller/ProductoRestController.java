@@ -10,11 +10,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/productos")
 @CrossOrigin(origins = "*")
-public class ProductoController {
+public class ProductoRestController {
 
     private final ProductoService productoService;
 
-    public ProductoController(ProductoService productoService) {
+    public ProductoRestController(ProductoService productoService) {
         this.productoService = productoService;
     }
 

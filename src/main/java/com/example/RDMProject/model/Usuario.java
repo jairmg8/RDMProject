@@ -64,4 +64,12 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Integer getRol() {
+        return rol;
+    }
+
+    public void setRol(Integer rol) {
+        this.rol = rol;
+    }
 }

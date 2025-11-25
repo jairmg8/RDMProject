@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 @RestController
 @RequestMapping("/api/detalle-ventas")
-public class DetalleVentaController {
+public class DetalleRestVentaController {
 
     @Autowired
     private DetalleVentaRepository repo;
