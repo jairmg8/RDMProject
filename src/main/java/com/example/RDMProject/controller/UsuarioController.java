@@ -8,6 +8,6 @@ public class UsuarioController {
     @GetMapping("/prueba")
     public String detalle(Model model){
         model.addAttribute("title","Recuerdo madre");
-        return "detalles.html";
+        return "index.html";
     }
 }
